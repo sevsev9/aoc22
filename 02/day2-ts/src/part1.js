@@ -1,0 +1,2 @@
+// part 1: one liner
+require("fs/promises").readFile("input.txt", "utf-8").then((data) => data.split("\n").slice(0, -1).map(e => e.split(" ")).map(e => [e[0].charCodeAt(0) - 65, e[1].charCodeAt(0) - 88]).map(e => ((((3 + e[1] - e[0]) % 3) * 3) + 3) % 9 + e[1] + 1).reduce((a, b) => a + b, 0)).then(console.log);

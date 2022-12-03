@@ -1,0 +1,2 @@
+const l2d = [[3, 4, 8],[1, 5, 9],[2, 6, 7]];
+require("fs/promises").readFile("input.txt", "utf-8").then(d => d.split("\n").slice(0, -1).map(e => e.split(" ")).map(e => [e[0].charCodeAt(0) - 65, e[1].charCodeAt(0) - 88]).map(e => l2d[e[0]][e[1]]).reduce((a, b) => a + b, 0)).then(console.log);
