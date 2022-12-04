@@ -1,0 +1,1 @@
+require("fs/promises").readFile("input.txt", "utf-8").then(d => d.split("\n").slice(0, -1).map(e => e.split(",").map(e => e.split("-").map(e => parseInt(e)))).filter(e => Math.max(e[0][0], e[1][0]) <= Math.min(e[0][1], e[1][1])).length).then(console.log)
